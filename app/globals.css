@@ -1,4 +1,6 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #f8f9fb;
@@ -7,14 +9,6 @@
   --navy-dark: #001f5e;
   --gold: #F5B700;
   --gold-hover: #e0a800;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-navy: var(--navy);
-  --color-navy-dark: var(--navy-dark);
-  --color-gold: var(--gold);
 }
 
 body {
