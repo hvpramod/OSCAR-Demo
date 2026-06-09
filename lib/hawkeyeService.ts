@@ -100,7 +100,7 @@ export async function getUpcomingVisitsByAPC(
      FROM hawkeye_apcs a
      LEFT JOIN hawkeye_visits v
        ON v.apc_id = a.id
-       AND v.scheduled_date BETWEEN CURRENT_DATE AND CURRENT_DATE + $1
+       AND v.scheduled_date BETWEEN CURRENT_DATE AND CURRENT_DATE + ($1 * INTERVAL '1 day')
        AND v.status = 'scheduled'
      GROUP BY a.id, a.name, a.region, a.state, a.lab, a.manager_name, a.manager_email
      ORDER BY a.name`,
